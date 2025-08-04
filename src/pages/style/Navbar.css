@@ -125,14 +125,14 @@ ul {
   /* ...other styles... */
 }
 
-.hamburger {
+/* .hamburger {
   display: none;
   cursor: pointer;
-}
+} */
 
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
@@ -173,4 +173,67 @@ ul {
       transform: translateY(0px);
     }
   }
+} */
+
+
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    /* background: #0099CC; */
+    background: linear-gradient(90deg, #ffffff, #e0f7fa);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 10;
+  }
+  .navbar ul.responsive {
+    display: flex;
+    width: 200px;      /* Set a fixed width for the dropdown */
+    position: absolute;
+    top: 60px;         /* Same as .navbar ul */
+    right: 30px;       /* Align with hamburger's right */
+    left: auto;        /* Override left: 0 */
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(90deg, #ffffff, #e0f7fa);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 18px;      /* Adjust as needed for vertical alignment */
+    right: 30px;    /* Same as navbar horizontal padding */
+    margin: 0;
+    z-index: 20;
+  }
+}
+
+/* Hamburger bar styles */
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background: #333;
+  transition: 0.4s;
+}
+.bar.open {
+  background: #0099CC;
 }
