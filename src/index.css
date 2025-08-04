@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+body {
+  min-height: 100vh;
+  margin: 10px 20px;
+  background: linear-gradient(120deg, #f0f4f8, #e6f7ff);
+  transition: background 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .logo h1 {
+    font-size: 22px;
+  }
+
+  .content h2 {
+    font-size: 28px;
+  }
+
+  .content-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .gpa button,
+  .cgpa button {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .Footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

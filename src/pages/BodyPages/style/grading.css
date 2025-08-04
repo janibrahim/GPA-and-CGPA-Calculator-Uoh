@@ -1,0 +1,103 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to right, #f0f4f7, #e0f7fa);
+  color: #333;
+}
+
+.grade-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  background: linear-gradient(to right, #ffffff, #e8f5e9);
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+  margin-top: 20px;
+}
+
+.grade-section h1 {
+  text-align: center;
+    background: linear-gradient(to right, #4caf50, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+  font-size: 32px;
+}
+
+.grade-section p {
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table thead {
+  background: linear-gradient(90deg, #87e8b0, #ff9898);
+  border-top: 1px solid #ccc;
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+  border-radius: 0 0 12px 12px;
+}
+
+table th,
+table td {
+  padding: 14px 18px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .grade-section {
+    padding: 20px;
+  }
+
+  table th,
+  table td {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .grade-section h1 {
+    font-size: 26px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

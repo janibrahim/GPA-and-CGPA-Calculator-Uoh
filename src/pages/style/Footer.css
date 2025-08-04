@@ -1,0 +1,30 @@
+.Footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #e3f2fd, #ffffff);
+  border-top: 1px solid #ccc;
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+  border-radius: 0 0 12px 12px;
+  
+}
+
+.Footer p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+  flex: 1;
+}
+.Footer a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+.Footer a:hover {
+  color: #388e3c;
+  text-decoration: underline;
+}
