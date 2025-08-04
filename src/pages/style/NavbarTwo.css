@@ -1,94 +1,157 @@
+/* NAVBAR CONTAINER */
+.navbar-container {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAV MENU */
 #menu {
-	background: #0099CC;
-	height: 45px;
-	padding-left: 18px;
-	border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #39a54f, #2c96e7a5);
+  border-top: 1px solid #ccc;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+  padding: 0 20px;
+  height: 60px;
+  border-radius: 10px;
+  position: relative;
+  transition: border-radius 0.3s ease;
+  flex-wrap: wrap;
 }
-#menu ul, #menu li {
-	margin: 0 auto;
-	padding: 0;
-	list-style: none
+
+/* LOGO SECTION */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logo h1 {
+  color: #ffffff;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* NAV LINKS */
 #menu ul {
-	width: 100%;
-	text-align: left;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
 }
-#menu li {
-	display: inline-block;
-	position: relative;
+
+#menu li a {
+  text-decoration: none;
+  color: #ffffff;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  padding: 8px 14px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-#menu a {
-	display: block;
-	line-height: 45px;
-	padding: 0 14px;
-	text-decoration: none;
-	color: #FFFFFF;
-	font-size: 16px;
-}
-#menu a.dropdown-arrow:after {
-	content: "\25BE";
-	margin-left: 5px;
-}
+
+/* i want to hover on a a beutiful green gradient border bottom will over from left to right */
+
 #menu li a:hover {
-	color: #0099CC;
-	background: #F2F2F2;
+  background: #f2f2f2;
+  color: #0099cc;
+  border-radius: 6px;
 }
-#menu input {
-	display: none;
-	margin: 0;
-	padding: 0;
-	height: 45px;
-	width: 100%;
-	opacity: 0;
-	cursor: pointer
-}
+
+/* HAMBURGER TOGGLE */
+#menu input,
 #menu label {
-	display: none;
-	line-height: 45px;
-	text-align: center;
-	position: absolute;
-	left: 35px
+  display: none;
 }
-#menu label:before {
-	font-size: 1.6em;
-	color: #FFFFFF;
-	content: "\2261"; 
-	margin-left: 20px;
-}
-#menu ul.sub-menus{
-	height: auto;
-	overflow: hidden;
-	width: 170px;
-	background: #444444;
-	position: absolute;
-	z-index: 99;
-	display: none;
-}
-#menu ul.sub-menus li {
-	display: block;
-	text-align: left;
-	width: 100%;
-}
-#menu ul.sub-menus a {
-	color: #FFFFFF;
-	font-size: 16px;
-}
-#menu li:hover ul.sub-menus {
-	display: block
-}
-#menu ul.sub-menus a:hover{
-	background: #F2F2F2;
-	color: #444444;
-}
-@media screen and (max-width: 800px){
-	#menu {position:relative}
-	#menu ul {background:#444444;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;text-align:left;}
-	#menu ul.sub-menus {width:100%;position:static;}
-	#menu ul.sub-menus a {padding-left:30px;}
-	#menu li {display:block;float:none;width:auto;}
-	#menu input, #menu label {position:absolute;top:0;left:0;display:block}
-	#menu input {z-index:4}
-	#menu input:checked + label {color:#FFFFFF}
-	#menu input:checked + label:before {content:"\00d7"}
-	#menu input:checked ~ ul {display:block}
+
+/* RESPONSIVE NAVBAR */
+@media screen and (max-width: 800px) {
+  #menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    height: auto;
+	transition: all 0.3s ease;
+	animation: fadeOut 1s ease;
+  }
+
+  /* TOGGLE CHECKBOX */
+  #menu input {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  /* HAMBURGER ICON */
+  #menu label {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 26px;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+	transition: color 0.3s ease;
+	transition: all 0.3s ease;
+	animation: fadeUn 1s ease;
+	
+  }
+
+  #menu label:before {
+    content: "\2261"; /* Hamburger icon ≡ */
+	transition: all 0.3s ease;
+	animation: fadeIn 1s ease;
+  }
+
+  #menu input:checked + label:before {
+    content: "\00d7"; /* Cross icon × */
+	transition: all 0.3s ease;
+	animation: fadeIn 1s ease;
+  }
+
+  /* COLLAPSIBLE MENU */
+  #menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    /* background-color: #444; */
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+    padding: 10px 0;
+    border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	background: linear-gradient(90deg, #39a54f, #2c96e7a5);
+	transition: all 0.3s ease;
+	animation: fadeIn 1s ease;
+  }
+
+  #menu input:checked ~ ul {
+    display: flex;
+  }
+
+  #menu li {
+    width: 100%;
+  }
+
+  #menu li a {
+    width: 100%;
+    padding: 10px 20px;
+  }
 }

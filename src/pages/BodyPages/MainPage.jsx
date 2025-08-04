@@ -17,14 +17,14 @@ const MainPage = () => {
           </p>
           <p>Use the links above to navigate to the GPA or CGPA calculator.</p>
         </div>
-        <div className="gpa">
+        <div className="gpa-main">
           <h3>GPA Calculator</h3>
           <p>Calculate your GPA by entering your course grades and credits.</p>
           <Link to="/bodyPages/gpa">
             <button className="gpa-btn">Go to GPA</button>
           </Link>
         </div>
-        <div className="cgpa">
+        <div className="cgpa-main">
           <h3>CGPA Calculator</h3>
           <p>Calculate your CGPA by entering your course grades and credits.</p>
           <Link to="/bodyPages/cgpa">

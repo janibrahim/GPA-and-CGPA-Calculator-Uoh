@@ -35,16 +35,16 @@
 }
 
 /* BUTTONS */
-.gpa,
-.cgpa {
+.gpa-main,
+.cgpa-main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.gpa button,
-.cgpa button {
+.gpa-main button,
+.cgpa-main button {
   padding: 12px 30px;
   font-size: 17px;
   margin: 10px;
@@ -56,8 +56,8 @@
   box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
   transition: all 0.3s ease;
 }
-.gpa button:hover,
-.cgpa button:hover {
+.gpa-main button:hover,
+.cgpa-main button:hover {
   background: linear-gradient(to right, #388e3c, #66bb6a);
   transform: scale(1.05);
 }
