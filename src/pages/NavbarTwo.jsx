@@ -48,6 +48,11 @@ const NavbarTwo = () => {
           <Link to="/bodyPages/grading">Grading Scheme</Link>
         </li>
         <li>
+          <a href="https://studentportal.uoh.edu.pk/dashboard" target="_blank" rel="noopener noreferrer">
+            Your Portal
+          </a>
+        </li>
+        <li>
           <a href="https://github.com/janibrahim" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>

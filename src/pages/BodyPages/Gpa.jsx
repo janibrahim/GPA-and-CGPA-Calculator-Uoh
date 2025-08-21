@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style/Gpa.css"; // Assuming you have a CSS file for styling
+
 
 const Gpa = () => {
   const [courses, setCourses] = useState([]);

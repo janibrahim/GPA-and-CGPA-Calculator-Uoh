@@ -1,38 +1,30 @@
 import React, { useState } from "react";
-import "./style/Cgpa.css"; // Optional for your styles
-
-const gradePointMap = {
-  A: 4.0,
-  B: 3.0,
-  C: 2.0,
-  D: 1.0,
-  F: 0.0,
-};
+import "./style/Cgpa.css"; // Optional styles
 
 const CgpaCalculator = () => {
-  const [courses, setCourses] = useState([{ grade: "", credit: "" }]);
+  const [semesters, setSemesters] = useState([{ gpa: "", credit: "" }]);
   const [cgpa, setCgpa] = useState(null);
 
   const handleChange = (index, field, value) => {
-    const updatedCourses = [...courses];
-    updatedCourses[index][field] = value;
-    setCourses(updatedCourses);
+    const updatedSemesters = [...semesters];
+    updatedSemesters[index][field] = value;
+    setSemesters(updatedSemesters);
   };
 
-  const addCourse = () => {
-    setCourses([...courses, { grade: "", credit: "" }]);
+  const addSemester = () => {
+    setSemesters([...semesters, { gpa: "", credit: "" }]);
   };
 
   const calculateCgpa = () => {
     let totalPoints = 0;
     let totalCredits = 0;
 
-    for (let course of courses) {
-      const grade = course.grade.toUpperCase();
-      const credit = parseFloat(course.credit);
+    for (let sem of semesters) {
+      const gpa = parseFloat(sem.gpa);
+      const credit = parseFloat(sem.credit);
 
-      if (gradePointMap[grade] !== undefined && !isNaN(credit)) {
-        totalPoints += gradePointMap[grade] * credit;
+      if (!isNaN(gpa) && !isNaN(credit)) {
+        totalPoints += gpa * credit;
         totalCredits += credit;
       }
     }
@@ -44,26 +36,27 @@ const CgpaCalculator = () => {
   return (
     <div className="cgpa-calculator">
       <h1>CGPA Calculator</h1>
-      <p>Enter your course grades and credit hours below:</p>
+      <p>Enter each semester GPA and total credit hours:</p>
 
-      {courses.map((course, index) => (
-        <div key={index} className="course-row">
+      {semesters.map((sem, index) => (
+        <div key={index} className="semester-row">
           <input
-            type="text"
-            placeholder="Grade (A, B, C...)"
-            value={course.grade}
-            onChange={(e) => handleChange(index, "grade", e.target.value)}
+            type="number"
+            step="0.01"
+            placeholder="Semester GPA"
+            value={sem.gpa}
+            onChange={(e) => handleChange(index, "gpa", e.target.value)}
           />
           <input
             type="number"
             placeholder="Credit Hours"
-            value={course.credit}
+            value={sem.credit}
             onChange={(e) => handleChange(index, "credit", e.target.value)}
           />
         </div>
       ))}
 
-      <button onClick={addCourse}>+ Add Course</button>
+      <button onClick={addSemester}>+ Add Semester</button>
       <button onClick={calculateCgpa}>Calculate CGPA</button>
 
       {cgpa !== null && (

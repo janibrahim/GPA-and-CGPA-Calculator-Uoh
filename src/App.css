@@ -1,0 +1,135 @@
+.gpa {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #f5fafd;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.6s ease-in-out;
+  margin-bottom: 200px;
+}
+
+.gpa-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gpa-heading h1 {
+  font-size: 30px;
+  background: linear-gradient(to right, #4caf50, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gpa-heading p {
+  font-size: 16px;
+  color: #444;
+  margin-top: 10px;
+}
+
+.gpa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.subjects > div {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subjects label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.subjects input {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.subjects input:focus {
+  outline: none;
+  border-color: #0d47a1;
+}
+
+.add-button {
+  padding: 12px 30px;
+  font-size: 17px;
+  margin: 10px;
+  background: linear-gradient(to right, #4caf50, #81c784);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background: linear-gradient(to right, #388e3c, #66bb6a);
+  transform: scale(1.05);
+}
+
+.gpa-result {
+  margin-top: 30px;
+}
+
+.gpa-result h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0d47a1;
+}
+
+.gpa-result table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.gpa-result th,
+.gpa-result td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.gpa-result th {
+  background-color: #e0f2f1;
+  color: #0d47a1;
+}
+
+.gpa-result td {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.gpa-result h3 {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #1a237e;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
