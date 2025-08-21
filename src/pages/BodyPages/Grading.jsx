@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/Grading.css"; // Assuming you have a CSS file for styling
+import "./style/grading.css"; // Assuming you have a CSS file for styling
 import { Link } from "react-router-dom";
 
 const Grading = () => {
