@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style/Cgpa.css"; // Optional styles
+import "./style/cgpa.css"; // Optional styles
 
 const CgpaCalculator = () => {
   const [semesters, setSemesters] = useState([{ gpa: "", credit: "" }]);
